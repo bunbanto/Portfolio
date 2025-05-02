@@ -1,0 +1,121 @@
+/* Styles section Benefits */
+.benefits-title {
+  margin-bottom: 40px;
+}
+
+.benefits-title-span {
+  color: var(--accet-green);
+}
+
+.cont-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.benefits-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.icons-square {
+  width: 48px;
+  height: 48px;
+  background-color: var(--light-accet);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.dark .icons-square {
+  background-color: var(--dark-accet-dt);
+}
+
+.icons-benefits {
+  stroke: var(--accet-green);
+}
+
+.dark .icons-benefits {
+  stroke: var(--accet-green-dt);
+}
+
+.benefits-text-title {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 156%;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .benefits-title {
+    font-size: 108px;
+    line-height: 115%;
+    letter-spacing: 0.02em;
+    margin-bottom: 0;
+  }
+
+  .cont-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 32px;
+    max-width: 704px;
+  }
+
+  .benefits-text {
+    display: flex;
+    flex-direction: column;
+    max-width: 336px;
+  }
+
+  .benefits-text:first-child {
+    margin-left: 368px;
+  }
+
+  .benefits-text-title {
+    font-size: 20px;
+    line-height: 160%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .benefits .container {
+    position: relative;
+  }
+
+  .benefits-container {
+    position: absolute;
+    content: '';
+    background-image: url(../img/webp/m-hero-bg@2x.webp);
+    background-repeat: no-repeat;
+  }
+
+  .benefits-title {
+    max-width: 686px;
+  }
+
+  .cont-benefits {
+    max-width: 1216px;
+    margin-top: -95px;
+  }
+
+  .benefits-text {
+    max-width: 384px;
+  }
+
+  .benefits-text:first-child {
+    margin-left: 832px;
+  }
+
+  .benefits-text-paragraf {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (min-resolution: 192dpi) {
+  .benefits-container {
+    background-image: url(../img/webp/d-benefits-bg@2x.webp);
+  }
+}
