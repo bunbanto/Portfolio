@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/Portfolio/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choose Me</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+  />
+  <script type="module" crossorigin src="/Portfolio/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/Portfolio/assets/vendor-BmjYol9p.js">
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/vendor-BeNFBzCw.css">
+  <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-CjAQ2Uhf.css">
+</head>
+<body class="light">
+<!-- Header -->
+<header class="header">
+  <div class="container header-container">
+    <a href="./index.html" class="logo">
+      <span class="logo-black">LLOYD</span><span class="logo-green">JEFFERSON.</span>
+    </a>
+    <label class="switch">
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider"></span>
+    </label>
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop">
+      <a href="#about">About me</a>
+      <a href="#projects">Projects</a>
+      <a href="#work-together">Contacts</a>
+    </nav>
+    <!-- Mobile Menu Button with SVG -->
+    <button id="menuBtn" class="menu-icon" aria-label="Відкрити меню">
+      <svg width="32" height="32">
+        <use href="/Portfolio/assets/icons-D6LmE5qO.svg#menu-open"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+<!-- Mobile Menu Modal -->
+<div id="mobileMenu" class="mobile-menu hidden">
+  <a href="./index.html" class="logo logo-modal">
+    <span class="logo-black">LLOYD</span><span class="logo-green">JEFFERSON.</span>
+  </a>
+  <button id="closeBtn" class="close-icon" aria-label="Закрити меню">
+    <svg width="32" height="32">
+      <use href="/Portfolio/assets/icons-D6LmE5qO.svg#menu-close"></use>
+    </svg>
+  </button>
+  <nav class="mobile-nav">
+    <a href="#about" class="mobile-link">About me</a>
+    <a href="#projects" class="mobile-link">Projects</a>
+    <a href="#work-together" class="mobile-link">Contacts</a>
+  </nav>
+</div>
+
+<main>
+  <!-- Loads the specified .html file -->
+  <section class="hero">
+  <div class="container">
+    <div class="hero-area">
+      <h1 class="hero-title">
+        Hello, I am
+        <img
+          class="hero-photo"
+          srcset="data:image/webp;base64,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 1x, /Portfolio/assets/d-hero@2x-Cosh4NS6.webp 2x"
+          src="data:image/webp;base64,UklGRhIIAABXRUJQVlA4WAoAAAAQAAAAawAAawAAQUxQSLkAAAABb0AgQBnTAj0hIiLqRxlVwK1ta1l0F9qA+xdBEUQUoAV4TgFuIQ0QkRNarAW4w3xfNePvroknov8TgPfJoTZCtzUXPq9oIzn+Sc4Id3+g3qQtLO/mRnwCgHqTt7AAE0MYBK4MeShDaelyOI4coQtH6sHRenKMNMfW/Pv/b9Yc2yfH6MHRunCkNhzhEodTcVhwY6gCU4YgoN7kLSwA5vISAKDepC0s71CS5sHHfVHbGD5PjrWU7cCF9wBWUDggMgcAAHAiAJ0BKmwAbAA+kTyZSKWjIqEtFZuQsBIJZADOMJ1LH83zUIiX7Q2m3z55v0d/6bfjt6Rn2vQqKlVlO8/D+Eel0njP9zyQvjEKYRsZLwQ9/UHZrHRBTEFekTW9yvhMZyO02REckNYkW0hGTB9lD2C3Ya9qV0U/BkEcRZwIdZ/ZHt+bQ3T9dTXyA7wroXsmWb0K5idLloBupOgBFUu0fKGEOv/jk6zr+OtvcVaF5vjA9jj5vZ0Uq9qEoRz8XeWZBX7QM5919gp+66DbT5ee+M17//Adr8HlN+8EEIE9TKmGFgo+M58XTHsXBs2ZrtF+1zwhpbgNf53FyS49FN+h4xzy6BUofNG22atRAP/R0IBGwwfsDurppbeB7AAAAP7wQL9NyEI8lD4JVK8pc87uPmMr0Nr4jbNPXGWy0Uo2JsjjOir/rzSC2AC3j1/Z+ZxnaHIIrp3528ekhzVuZCY3P55LASV6jo49XuOXyFNaF63IvlH5rV5hENEcvSRWo0659r1F8E+KbTXKZQsGJf2Juxzw2hmnv0iifZGMXw83NCnmAes82p60HA3VuTQTPkII1TQEV575+kTsuBroLsXD5KZTOj2V0aGyf2y3/nPoq1ViKNVX/YPXHG/vbJZycw/DdXPNIFFRhUoowfgIBS27QCf2me0zX+Dumf8dfLgZLVMt8YAku4eXhQRZJKbfeiZoUZiHSPgdCOoLR52C0ERm7M47jTylbYNktYvcsVwVH2++NsaUVmjGASx+/dVP5CbBPPbZ2ulXsvgZao32UBBKscuGI8O+Vnyb6kP1PiDHapJb8qxowZdMdwwWEGygIYZ5c2M45BFtNEiGhIMe2tlMKt/i5NQQQjsaFf43J36OpITB1v7WgvM0nam343/M0a8mW1aIOB9md6QjLwIO2AK0eZQv4+8hFX9kjpTK6n2oQtOt85/AwUBBQXp+SBkxZx27sIOOxbdh6M3nxRlS71QDqSltMPqAsjhI42FjLfA+LycaxRCOxUSP+vpBNEpt52iYUpD9Nx4/6opjgZlkLz+EI33TH9iioTCUzzdU6wSrN8844hHH+ZeoyZwjzWrYnrUKfjyE9iK/Ct/nsOwZIxkLdTu3EuMV7a7eXoaKh6/srawbNJeHVU2SOBB9EBPSuIuBZgw4q7/9VrCDn+c7vmW7Kdz4ZQT9txMUl5IjQWRL2qLhWX0HjZ5frcy/fL0LTneGSy7d/gnRnixtMeKmzGaBcXT5Up72BLDitT5NTgO4xh4n088iG2c3yXfzVsmgI1rZ2vDqMx4hQi7wKINVPUgxbFDCdwbdhKS6eafLcW23c1HlzwLQCoAH250OfrX2uCrQITJ80uv0bo+qPK/eo3rVN3Ir4EuAby71GDY/bEM9HZXe2T9oyoaICyCPnq1Rc+KP1iQHk6uB/Sj6BRX6nZhgC4d3gmZJ1wMCjgkF+gkmhScn5GaUi84pVIRD8Bt6ixxf/9m7lAQaEzSbr3AuIHD5rvKWieC2pSshEks5MHkQJncS9DZn8QO/xJdoQgIPD+blj1YhaFLnlyRBUBmoELrbrmKcqRtXVauEkeP5QDkcvPWmmgvrrqRplPwZJL2xAaGFwiEzrEI9FFIv1p2JGHnUj2JP6nAs5OnobRmCqR1S4DNKQP5xpUijwsJCy5Ja20ITf3r22LDHk5NuDlQn213PdqnOwRtXY0PHt7qcKj8PX4OCnTbvN3YKxqB9V4h6VdYYF52QNPV2mZlXMZy5tB8020QWhLcDaFaImu4PAdqOXvRjHWgEvQWrTRuP8ZIwoJ0ulVSly08Fx9JDNPucRg61Gu5NGBVEAUhrx0YiQUlAcb1/UgRn/jeNTiV2U2E9y89w3gndbdX2blKL8eEXYTtrjjeIv1QoLYBUsHD1p52gSGn4wTRi6IUm3gvqtEMotRI4HTbc6SHG9iaW1ipfMazH33mo++AlS1sFr4zPrVsRxpfqOvPeBhg1EnuNBzzzMGu4DKR4QGULE5aTw6zXhYq6feX11QgrY5oDAnssl6I4hur90moXMqohRBw4Upzd1chVLViUMYN6TROcH82x0A6i50b1tL5gCSZP+7L2KGA4a98wkVHlynWt3W/77tTNmP27G8Z3fsb1j5HVVdK8VrUXp+hknIzU8ALNAjN5iXWtXXttgP6rms3kpkPctU+9QXmuXkcwH8WmQHvHf6p37T7vw06efV9+FDOfrInYPnoHT0E8QKl052cNh/wFy/Mssmj0SplTuI4WaFloTrW7PgKX0egaZGg7gJVK1EEOmWQ9Owb4kth2/okuTitCt9c4lSxsfBipr8R/Lj/Mb70evh3JevJA3iEDEQeK2vvauj9lo8m6cXNFjfVEY9xrCExPXd176hSsKWx+em+MjJsbr3u+909C17M/YZ39CMKIHnvhAe8Fa/T5OB4+bdLSRNfEKEMlpKyYV96sWs//Yj98i0aEc9IAAA=="
+          alt="Lloyd`s photo"
+          width="108"
+          height="108"
+        /><span class="hero-accent">Fullstack developer</span>
+      </h1>
+      <div class="hero-info">
+        <div class="hero-order">
+          <svg class="hero-icon" width="28" fill="none">
+            <use href="/Portfolio/assets/icons-D6LmE5qO.svg#arrow-hero"></use>
+            >
+          </svg>
+          <a class="hero-link" href="#work-together">Order the project</a>
+        </div>
+        <h4 class="hero-descr">
+          I work with people all over the world to create
+          <span class="hero-accent">impressive</span> and
+          <span class="hero-accent">functional websites</span>
+          that reflect each client’s unique personality.
+        </h4>
+      </div>
+    </div>
+    <ul class="hero-media-list">
+      <li class="hero-media-descr">
+        <a
+          class="hero-media-link"
+          href="https://www.instagram.com/goitclub/"
+          target="_blank"
+        >Instagram</a>
+      </li>
+      <li class="hero-media-descr">
+        <a
+          class="hero-media-link"
+          href=" https://www.facebook.com/goITclub/"
+          target="_blank"
+        >Facebook</a>
+      </li>
+      <li class="hero-media-descr">
+        <a
+          class="hero-media-link"
+          href="https://www.linkedin.com/school/goit-start-your-career-in-it"
+          target="_blank"
+        >Linkedin</a>
+      </li>
+      <li class="hero-media-descr">
+        <a
+          class="hero-media-link"
+          href="https://psv0782.github.io/ChooseMe/"
+          target="_blank"
+        >GitHub</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <section id="about" class="about">
+  <div class="container">
+    <h2 class="about-title">About <span class="about-accent">me</span></h2>
+    <div class="about-box">
+      <div class="about-info">
+        <div class="about-picture">
+          <picture>
+            <source
+              srcset="/Portfolio/assets/d-about-DZPjm4W_.webp 1x, /Portfolio/assets/d-about@2x-DZFsQDqh.webp 2x"
+              media="(min-width: 1280px)"
+            />
+            <source
+              srcset="/Portfolio/assets/t-about-BOL4u5sZ.webp 1x, /Portfolio/assets/t-about@2x-ChVnf9xH.webp 2x"
+              media="(min-width: 768px)"
+            />
+            <source
+              srcset="/Portfolio/assets/m-about-DNTEQe97.webp 1x, /Portfolio/assets/m-about@2x-K7YPiZO-.webp 2x"
+              media="(max-width: 768px)"
+            />
+            <img
+              src="/Portfolio/assets/m-about-DNTEQe97.webp"
+              alt="Developers`s photo"
+              width="320"
+              height="374"
+              class="about-image"
+            />
+          </picture>
+        </div>
+        <div class="about-bio">
+          <h3 class="about-list-title">BIO</h3>
+          <ul class="about-bio-list">
+            <li class="about-bio-mark">
+              <p class="about-bio-descr">
+                I'm Lloyd Jefferson, a talented programmer specializing in
+                software development. My expertise spans various programming
+                languages and technologies, and I am dedicated to continually
+                enhancing my skills. I thrive on seeking unconventional and
+                creative solutions to problems, leveraging a high level of
+                analytical skills to effectively tackle even the most
+                challenging tasks.
+              </p>
+            </li>
+            <li class="about-bio-mark">
+              <p class="about-bio-descr">
+                Adaptable to both independent and team-oriented work, I
+                collaborate seamlessly with colleagues, exchanging ideas and
+                finding optimal solutions. My professional maturity enables me
+                to navigate challenges and stressful situations with a calm
+                demeanor, maintaining a consistently high quality of work.
+                Committed to self-improvement, I actively engage in studying new
+                technologies and practices to stay current with the latest
+                innovations in the field.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="about-knowledge">
+      <ul class="about-list">
+        <li class="about-list-mark">
+          <h3 class="about-list-title">EDUCATION</h3>
+          <ul class="about-text">
+            <li class="about-text-mark">
+              <p class="about-text-descr">
+                2018 - 2019 / Frontend Development Diploma, GoIT IT School, New
+                York
+              </p>
+            </li>
+            <li class="about-text-mark">
+              <p class="about-text-descr">
+                2019 - 2020 / Advanced Web Development Certificate, GoIT IT
+                School, New York
+              </p>
+            </li>
+            <li class="about-text-mark">
+              <p class="about-text-descr">
+                2020 - 2022 / Advanced Blender Animation Techniques, Udemy
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li class="about-list-mark">
+          <h3 class="about-list-title">ROLE</h3>
+          <ul class="about-text">
+            <li class="about-text-mark">
+              <p class="about-text-descr">Frontend development</p>
+            </li>
+            <li class="about-text-mark">
+              <p class="about-text-descr">HeadlessCMS, Wordpress</p>
+            </li>
+            <li class="about-text-mark">
+              <p class="about-text-descr">Blender (enjoy)</p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <section class="skills">
+  <div class="skills-info">
+    <h2 class="visually-hidden">Tech skills</h2>
+    <div class="marquee">
+      <div class="marquee-inner">
+        <div class="marquee-line">
+          <ul class="skills-list">
+            <li class="skills-item"><h3 class="skills-text">HTML/CSS</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">JavaScript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">React</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Node.js</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">React Native</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Typescript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">HTML/CSS</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">JavaScript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">React</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Node.js</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">React Native</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Typescript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="marquee rotate">
+      <div class="marquee-inner">
+        <div class="marquee-line rotate">
+          <ul class="skills-list">
+            <li class="skills-item">
+              <h3 class="skills-text">HTML/CSS</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">JavaScript</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">React</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">Node.js</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">React Native</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">Typescript</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">HTML/CSS</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">JavaScript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">React</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Node.js</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item">
+              <h3 class="skills-text">React Native</h3>
+            </li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+            <li class="skills-item"><h3 class="skills-text">Typescript</h3></li>
+            <li class="skills-item">
+              <div class="skills-dot">
+                <svg class="dot" width="8" height="8" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#dot"></use>
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="bold">MY</span> <span class="green">PROJECTS</span>
+    </h2>
+    <ul class="projects-list" id="projectsList"></ul>
+    <button class="load-more" id="loadMoreBtn">LOAD MORE</button>
+  </div>
+</section>
+  <section class="benefits">
+  <div class="container benefits-container">
+    <div class="benefits-info">
+      <h2 class="benefits-title">
+        <span class="benefits-title-span">Benefits</span> of working with me
+      </h2>
+      <ul class="cont-benefits">
+        <li class="benefits-text">
+          <div class="icons-square">
+            <svg class="icons-benefits" width="24" height="24" fill="none">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#user"></use>
+            </svg>
+          </div>
+          <h4 class="benefits-text-title">Expertise</h4>
+          <p class="benefits-text-paragraf">
+            With extensive experience in development, I have a deep
+            understanding of programming and website development.
+          </p>
+        </li>
+        <li class="benefits-text">
+          <div class="icons-square">
+            <svg class="icons-benefits" width="24" height="24" fill="none">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#chat"></use>
+            </svg>
+          </div>
+          <h4 class="benefits-text-title">Communication</h4>
+          <p class="benefits-text-paragraf">
+            Understanding your needs and wants is my priority and I am always
+            available for discussions and open to corrections.
+          </p>
+        </li>
+        <li class="benefits-text">
+          <div class="icons-square">
+            <svg class="icons-benefits" width="24" height="24" fill="none">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#brush"></use>
+            </svg>
+          </div>
+          <h4 class="benefits-text-title">ART</h4>
+          <p class="benefits-text-paragraf">
+            Thanks to my creative nature, I am ready to accept challenges and
+            help you bring your ideas to life.
+          </p>
+        </li>
+        <li class="benefits-text">
+          <div class="icons-square">
+            <svg class="icons-benefits" width="24" height="24" fill="none">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#hourglass"></use>
+            </svg>
+          </div>
+          <h4 class="benefits-text-title">Urgent execution</h4>
+          <p class="benefits-text-paragraf">
+            I understand how important time is to you. Ready to work quickly and
+            efficiently, without reducing the quality of work.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  <section class="faq section">
+  <div class="faq-div container">
+    <div class="title-div">
+      <h2 class="faq-title">
+        frequently asked <span class="faq-title-span">question</span>
+      </h2>
+      <img
+        src="/Portfolio/assets/d-faq-bg-HAfd1WXB.webp"
+        srcset="/Portfolio/assets/d-faq-bg@2x-hnIAgy5h.webp 2x"
+        alt="dots"
+        class="faq-decor"
+      />
+    </div>
+    <ul class="accordion-container">
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            What programming languages are most often used in your project?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-up"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            In the field of web development, there are various technologies and
+            programming languages. Typically, this includes a combination of
+            frontend (client side) and backend (server side) languages.
+          </p>
+        </div>
+      </li>
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            What are the deadlines for the project?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-down"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            The terms of project implementation depend to a large extent on a
+            number of factors, such as the scope of the project, its complexity,
+            and the availability of resources. Determining exact deadlines is a
+            difficult task, and it usually occurs during the planning phase of
+            the project.
+          </p>
+        </div>
+      </li>
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            What payment methods do you accept?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-down"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            Payment through credit and debit cards such as Visa, MasterCard,
+            specialized electronic payment systems such as PayPal, as well as
+            payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+          </p>
+        </div>
+      </li>
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            How can I contact you?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-down"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            In the field of web development, there are various technologies and
+            programming languages. Typically, this includes a combination of
+            frontend (client side) and backend (server side) languages.
+          </p>
+        </div>
+      </li>
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            Do you provide advice or support?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-down"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            The terms of project implementation depend to a large extent on a
+            number of factors, such as the scope of the project, its complexity,
+            and the availability of resources. Determining exact deadlines is a
+            difficult task, and it usually occurs during the planning phase of
+            the project.
+          </p>
+        </div>
+      </li>
+      <li class="ac">
+        <h3 class="ac-header">
+          <button type="button" class="ac-trigger">
+            What does the process of developing a software product look like
+            from idea to implementation?
+            <svg class="arrow-icon" width="24" height="24">
+              <use href="/Portfolio/assets/icons-D6LmE5qO.svg#btn-down"></use>
+            </svg>
+          </button>
+        </h3>
+        <div class="ac-panel">
+          <p class="ac-text-body-1">
+            Payment through credit and debit cards such as Visa, MasterCard,
+            specialized electronic payment systems such as PayPal, as well as
+            payments in cryptocurrencies such as Bitcoin, Ethereum and others.
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <section class="reviews">
+  <div class="container">
+    <h2 class="title_reviews">reviews</h2>
+    <div class="swiper">
+      <ul class="swiper-wrapper" id="reviews-container">
+        <!-- Динамічно додані слайди будуть тут -->
+      </ul>
+      <!-- Кнопки навігації -->
+      <div class="error-message visually-hidden">No reviews found</div>
+      <div class="swiper-btns">
+        <button class="swiper-button-prev" aria-label="previous">
+          <svg class="arr-btn" width="24" height="24">
+            <use href="/Portfolio/assets/icons-D6LmE5qO.svg#arrow-left"></use>
+          </svg>
+        </button>
+        <button class="swiper-button-next" aria-label="next">
+          <svg class="arr-btn" width="24" height="24">
+            <use href="/Portfolio/assets/icons-D6LmE5qO.svg#arrow-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Work together -->
+<section class="together-section" id="work-together">
+  <div class="container together-container">
+    <h2 class="together-title">
+      let’s <span class="together-style">work together</span>
+    </h2>
+
+    <div class="work-together">
+      <div class="together-contacts">
+        <p class="text-contacts">
+          Contact me to transform your ideas into exceptional solutions.
+        </p>
+        <address class="addr">
+          <ul class="addr-list">
+            <li class="addr-item">
+              <a class="addr-item-link" href="tel:+380904567890">
+                <svg class="icons-together" width="24" height="16" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#phone"></use>
+                </svg>
+                +38 090 456 78 90
+              </a>
+            </li>
+            <li class="addr-item">
+              <a class="addr-item-link" href="mailto:lloydjefferson@gmail.com">
+                <svg class="icons-together" width="24" height="16" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#mail"></use>
+                </svg>
+                lloydjefferson@gmail.com
+              </a>
+            </li>
+            <li class="addr-item">
+              <a
+                class="addr-item-link"
+                href="https://www.google.com/maps?q=New+York,+USA"
+                target="_blank"
+              >
+                <svg class="icons-together" width="24" height="16" fill="none">
+                  <use href="/Portfolio/assets/icons-D6LmE5qO.svg#location"></use>
+                </svg>
+                USA, New York
+              </a>
+            </li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="form-container">
+        <form class="together-form" novalidate>
+          <div class="together-input">
+            <label class="together-label" for="email">
+              <input
+                class="together-input-email"
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Your email*"
+                pattern="^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"
+              />
+            </label>
+          </div>
+          <div class="together-form-com">
+            <label class="form-user-label" for="comment"></label>
+            <textarea
+              class="form-user-comment"
+              id="comment"
+              name="comment"
+              placeholder="Message"
+              required
+            ></textarea>
+          </div>
+          <button class="together-btn" type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Modal window -->
+<div class="modal-backdrop hidden" id="modal-backdrop">
+  <div class="modal" id="modal">
+    <button class="modal-close-btn" id="modal-close" type="button">
+      <svg class="modal-close-icon" width="24" height="24">
+        <use href="/Portfolio/assets/icons-D6LmE5qO.svg#menu-close"></use>
+      </svg>
+    </button>
+    <p class="modal-title">Thank you for your interest in cooperation!</p>
+    <p class="modal-text">
+      The manager will contact you shortly to discuss further details and
+      opportunities for cooperation. Please stay in touch.
+    </p>
+  </div>
+</div>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-container">
+      <a href="#" class="footer-logo">
+        <span class="footer-logo-black">LLOYD</span><span class="footer-logo-green">JEFFERSON.</span>
+      </a>
+      <ul class="footer-socials">
+        <li><a class="link-social" href="https://www.instagram.com/goitclub/" target="_blank">Instagram</a></li>
+        <li><a class="link-social" href="https://www.facebook.com/goITclub/" target="_blank">Facebook</a></li>
+        <li><a class="link-social" href="https://www.linkedin.com/school/goit-start-your-career-in-it"
+               target="_blank">Linkedin</a></li>
+        <li><a class="link-social" href="https://github.com/psv0782/ChooseMe" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+    <p class="footer-copyright">&#169; Copyright 2025. <br class="made">Made by LloydJefferson
+    </p>
+  </div>
+</footer>
+<a href="#" class="rollup" aria-label="Back to top">
+  <svg class="icon-arrow-up" width="24" height="24">
+    <use href="/Portfolio/assets/icons-D6LmE5qO.svg#arrow-visit"></use>
+  </svg>
+</a>
+
+</body>
+</html>
