@@ -27,7 +27,7 @@ const projects = [
     image1x: project3,
     image2x: project3_2x,
     alt: 'Wallet webservice',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'Green harvest webservice',
@@ -35,7 +35,7 @@ const projects = [
     image1x: project7,
     image2x: project7_2x,
     alt: 'Green harvest webservice',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'English Exellence website',
@@ -43,7 +43,7 @@ const projects = [
     image1x: project5,
     image2x: project5_2x,
     alt: 'English Exellence website',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'PORTFOLIO WEBSITE',
@@ -51,7 +51,7 @@ const projects = [
     image1x: project4,
     image2x: project4_2x,
     alt: 'Portfolio Website',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'TRAVEL AGENCY SITE',
@@ -59,7 +59,7 @@ const projects = [
     image1x: project6,
     image2x: project6_2x,
     alt: 'Travel Agency Website',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'VYSHYVANKA VIBES LANDING PAGE',
@@ -67,7 +67,7 @@ const projects = [
     image1x: project2,
     image2x: project2_2x,
     alt: 'VYSHYVANKA VIBES LANDING PAGE',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'POWER PULSE WEBSERVICE',
@@ -75,7 +75,7 @@ const projects = [
     image1x: project1,
     image2x: project1_2x,
     alt: 'POWER PULSE WEBSERVICE',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'CHEGO JEWELRY WEBSITE',
@@ -83,7 +83,7 @@ const projects = [
     image1x: project8,
     image2x: project8_2x,
     alt: 'CHEGO JEWELRY WEBSITE',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'FRUITBOX ONLINE STORE',
@@ -91,7 +91,7 @@ const projects = [
     image1x: project9,
     image2x: project9_2x,
     alt: 'FRUITBOX ONLINE STORE',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
   {
     title: 'STARLIGHT STUDIO LANDING PAGE',
@@ -99,7 +99,7 @@ const projects = [
     image1x: project10,
     image2x: project10_2x,
     alt: 'STARLIGHT STUDIO LANDING PAGE',
-    link: 'https://github.com/psv0782/ChooseMe',
+    link: 'https://github.com/bunbanto/Portfolio',
   },
 ];
 
@@ -109,7 +109,7 @@ const batchSize = 3;
 const projectsList = document.getElementById('projectsList');
 const loadMoreBtn = document.getElementById('loadMoreBtn');
 
-const createProjectCard = (project) => {
+const createProjectCard = project => {
   const li = document.createElement('li');
   li.className = 'project-card';
   li.innerHTML = `
@@ -137,7 +137,7 @@ const renderProjectsBatch = () => {
   const slice = projects.slice(currentIndex, currentIndex + batchSize);
   const newCards = [];
 
-  slice.forEach((project) => {
+  slice.forEach(project => {
     const card = createProjectCard(project);
     projectsList.appendChild(card);
     newCards.push(card);
@@ -152,7 +152,7 @@ const renderProjectsBatch = () => {
   return newCards;
 };
 
-const scrollToFirstNewCard = (newCards) => {
+const scrollToFirstNewCard = newCards => {
   if (newCards.length > 0) {
     setTimeout(() => {
       newCards[0].scrollIntoView({

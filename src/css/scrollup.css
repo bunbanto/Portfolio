@@ -1,7 +1,7 @@
 .rollup {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 40px;
+  right: 40px;
   z-index: 999;
   border-radius: 50%;
   height: 50px;
@@ -14,13 +14,6 @@
   opacity: 0;
   pointer-events: none;
   outline: none;
-}
-
-@media only screen and (min-width: 1280px) {
-  .rollup {
-    bottom: 50px;
-    left: calc(53% + (1280px / 2));
-  }
 }
 
 /* Dark theme */
