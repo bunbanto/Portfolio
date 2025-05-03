@@ -46,7 +46,9 @@ emailWrapper.parentNode.insertBefore(errorText, emailWrapper.nextSibling);
 
 emailInput.addEventListener('input', () => {
   const emailValue = emailInput.value.trim();
-  const validEmail = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(emailValue);
+  const validEmail = /^\w+(\.\w+)?@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/.test(
+    emailValue
+  );
   const contrEmail = document.querySelector('.together-input-email');
 
   if (validEmail) {
@@ -85,12 +87,12 @@ form.addEventListener('submit', async event => {
   // Перевірка, чи заповнено поле email
   if (!email) {
     iziToast.error({
-      title: 'Error',
+      title: '',
       message: 'Please enter the email',
       position: 'topRight',
-      titleColor: '#e74a3b',
+      icon: '',
       color: darkTheme ? '#00b068' : '#bcdfd1',
-      messageColor: 'red',
+      messageColor: darkTheme ? 'white' : 'black',
     });
     return;
   }
@@ -98,12 +100,12 @@ form.addEventListener('submit', async event => {
   // Перевірка, чи заповнено поле comment
   if (!comment) {
     iziToast.error({
-      title: 'Error',
+      title: '',
       message: 'Please enter the comment',
       position: 'topRight',
-      titleColor: '#e74a3b',
+      icon: '',
       color: darkTheme ? '#00b068' : '#bcdfd1',
-      messageColor: 'red',
+      messageColor: darkTheme ? 'white' : 'black',
     });
     return;
   }
