@@ -5,3 +5,7 @@ import './js/burger-menu.js';
 import './js/switcher.js';
 import './js/work-together.js';
 import './js/scrollup.js';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();

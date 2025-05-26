@@ -113,13 +113,17 @@ const createProjectCard = project => {
   const li = document.createElement('li');
   li.className = 'project-card';
   li.innerHTML = `
-    <img
+    <img data-aos="flip-up" data-aos-duration="500" data-aos-easing="linear
       src="${project.image1x}"
       srcset="${project.image1x} 1x, ${project.image2x} 2x"
       alt="${project.alt}"
       class="project-img">
     <p class="project-tech">${project.tech}</p>
-    <div class="link-visit">
+    <div class="link-visit"
+    data-aos="fade-up" 
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-easing="linear"
+      data-aos-duration="500">
       <h3 class="project-title">${project.title}</h3>
       <a href="${project.link}" class="project-btn" target="_blank" rel="noopener noreferrer">
         VISIT
