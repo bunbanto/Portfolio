@@ -89,6 +89,22 @@
   background-color: var(--light-grey);
   border-radius: 8px;
   padding: 8px 12px;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.project-btn:hover::after {
+  content: 'Coming Soon';
+  position: absolute;
+  top: -30px;
+  left: 130px;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .link-visit {
@@ -129,7 +145,7 @@
   bottom: 0;
   height: 2px;
   width: 100%;
-  background-color: var(--accet-green);;
+  background-color: var(--accet-green);
   transition: width 0.3s ease;
 }
 

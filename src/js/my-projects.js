@@ -123,9 +123,9 @@ const createProjectCard = project => {
     data-aos="fade-up" 
       data-aos-anchor-placement="bottom-bottom"
       data-aos-easing="linear"
-      data-aos-duration="500">
+      data-aos-duration="500" >
       <h3 class="project-title">${project.title}</h3>
-      <a href="${project.link}" class="project-btn" target="_blank" rel="noopener noreferrer">
+      <a href="${project.link}" class="project-btn" target="_blank" rel="noopener noreferrer" onclick="return false;">
         VISIT
         <svg class="icon-project" width="18" height="18">
           <use href="${icon}#arrow-visit"></use>
